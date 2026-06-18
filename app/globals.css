@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------------------------------------------------------------
+   Design tokens — single source of truth.
+   Stored as space-separated RGB channels so Tailwind opacity modifiers work
+   (e.g. `bg-accent/10`, `text-foreground/70`).
+---------------------------------------------------------------------------- */
+:root {
+  --background: 8 8 11; /* #08080b */
+  --surface: 15 15 19; /* #0f0f13 */
+  --surface-2: 22 22 28; /* #16161c */
+  --border: 38 38 46; /* #26262e */
+  --foreground: 237 237 240; /* #ededf0 */
+  --muted: 148 148 158; /* #94949e */
+
+  --accent: 94 234 212; /* #5eead4 teal */
+  --accent-strong: 45 212 191; /* #2dd4bf */
+  --accent-foreground: 4 30 26; /* dark text on accent fills */
+  --iris: 129 140 248; /* #818cf8 — secondary, gradients only */
+
+  --radius: 0.85rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgb(var(--accent) / 0.85);
+    color: rgb(var(--accent-foreground));
+  }
+
+  /* Visible, on-brand focus ring for keyboard users only. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent/70 ring-offset-2 ring-offset-background;
+  }
+
+  /* Thin, themed scrollbar. */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--border));
+    border-radius: 999px;
+    border: 2px solid rgb(var(--background));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--muted) / 0.6);
+  }
+}
+
+@layer components {
+  /* Layout shell shared by every section. */
+  .shell {
+    @apply mx-auto w-full max-w-content px-5 sm:px-6 lg:px-8;
+  }
+
+  /* Soft glass surface used by cards and the nav. */
+  .glass {
+    @apply border border-border/80 bg-surface/60 backdrop-blur-xl;
+  }
+
+  /* Monospace eyebrow label used above section headings. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-accent;
+  }
+
+  /* Gradient text used sparingly for emphasis. */
+  .text-gradient {
+    @apply bg-gradient-to-br from-foreground via-foreground to-accent/80 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  /* Decorative dotted grid for hero / section backgrounds. */
+  .bg-grid {
+    background-image: radial-gradient(
+      rgb(var(--foreground) / 0.06) 1px,
+      transparent 1px
+    );
+    background-size: 28px 28px;
+  }
+
+  /* Fades a layer out toward the edges (used to mask the grid). */
+  .mask-radial {
+    -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 35%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 60% 60% at 50% 35%, #000 40%, transparent 100%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Respect users who prefer reduced motion. Framer Motion is also gated in JS,
+   this is the CSS safety net for transitions / CSS keyframe animations.
+---------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
