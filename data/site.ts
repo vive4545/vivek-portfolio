@@ -13,8 +13,10 @@ export const site: SiteConfig = {
   phone: "+91 91493 57330",
   phoneHref: "+919149357330",
   resumeUrl: "/Vivek_Joshi_Resume.pdf",
-  // Used for metadataBase, Open Graph, sitemap. Override with NEXT_PUBLIC_SITE_URL.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vivekjoshi.dev",
+  // Used for metadataBase, Open Graph, sitemap, canonical + JSON-LD.
+  // Defaults to the live Vercel URL; override with NEXT_PUBLIC_SITE_URL if you
+  // later add a custom domain.
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vivek-portfolio-f1p4.vercel.app",
   availability: "Available for new opportunities",
 };
 

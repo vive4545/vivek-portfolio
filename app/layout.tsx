@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { site } from "@/data/site";
+import { site, socials } from "@/data/site";
+import { skillGroups, education } from "@/data/skills";
 import { MotionProvider } from "@/components/providers/MotionProvider";
 import "./globals.css";
 
@@ -85,18 +86,29 @@ const jsonLd = {
   "@type": "Person",
   name: site.name,
   jobTitle: site.role,
+  description: site.valueProp,
   email: `mailto:${site.email}`,
   telephone: site.phone,
   url: site.url,
+  image: `${site.url}/opengraph-image`,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Ahmedabad",
+    addressRegion: "Gujarat",
     addressCountry: "IN",
   },
-  sameAs: [
-    "https://github.com/vive4545",
-    "https://www.linkedin.com/in/vivek-joshi-618384278/",
-  ],
+  // Skills — helps Google associate you with these technologies.
+  knowsAbout: skillGroups.flatMap((g) => g.skills),
+  // Education — strengthens entity recognition for your name.
+  alumniOf: education.map((e) => ({
+    "@type": "CollegeOrUniversity",
+    name: e.institution,
+  })),
+  // Verified profiles across the web — the strongest signal that all these
+  // accounts are the same person, which is what ranks you #1 for your name.
+  sameAs: socials
+    .filter((s) => s.href.startsWith("http"))
+    .map((s) => s.href),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
