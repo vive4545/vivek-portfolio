@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -25,6 +27,16 @@ export function Projects() {
           </Reveal>
         ))}
       </div>
+
+      <Reveal className="mt-10 flex justify-center">
+        <Link
+          href="/projects"
+          className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/50 px-5 py-2.5 text-sm font-medium text-foreground transition-colors duration-200 hover:border-accent/50"
+        >
+          View all projects
+          <ArrowUpRight className="h-4 w-4" />
+        </Link>
+      </Reveal>
     </Section>
   );
 }

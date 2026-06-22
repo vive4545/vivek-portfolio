@@ -33,16 +33,30 @@ export interface ProjectLink {
   type: "github" | "npm" | "live" | "docs";
 }
 
+/** A prose block on a project's dedicated case-study page (indexable text). */
+export interface CaseStudySection {
+  heading: string;
+  body: string;
+}
+
 export interface Project {
+  /** URL slug — drives /projects/[slug] and the sitemap. Keep stable. */
+  slug: string;
   title: string;
   blurb: string;
   description: string;
+  /** Unique meta description for the project's detail page (SEO). */
+  metaDescription: string;
+  /** Short context line (domain / role) shown on the detail page. */
+  context: string;
   highlights: string[];
   tech: string[];
   links: ProjectLink[];
   featured?: boolean;
   /** Optional screenshot in /public/projects — rendered with next/image when set. */
   image?: string;
+  /** Long-form case-study prose for the dedicated page — real text for Google. */
+  caseStudy: CaseStudySection[];
 }
 
 export interface ExperienceItem {

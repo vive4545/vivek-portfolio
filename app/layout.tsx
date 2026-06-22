@@ -22,10 +22,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 const description = site.valueProp;
 
+// Location + core stack live in the title — this is what shows in Google and
+// what matches searches like "full stack developer ahmedabad".
+const homeTitle = `${site.name} — Full Stack Developer (MERN, Node.js, React) | Ahmedabad`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.role}`,
+    default: homeTitle,
     template: `%s · ${site.name}`,
   },
   description,
@@ -52,12 +56,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: site.url,
     siteName: `${site.name} — Portfolio`,
-    title: `${site.name} — ${site.role}`,
+    title: homeTitle,
     description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.role}`,
+    title: homeTitle,
     description,
     creator: "@vivekjoshi",
   },

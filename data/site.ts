@@ -20,11 +20,13 @@ export const site: SiteConfig = {
   availability: "Available for new opportunities",
 };
 
+// Root-relative hashes so the nav works from any route: on the homepage they
+// scroll in-page; from /projects/* they navigate home and then scroll.
 export const navLinks: NavLink[] = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const socials: SocialLink[] = [

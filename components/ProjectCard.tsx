@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import {
   m,
@@ -9,7 +10,7 @@ import {
   useReducedMotion,
   useSpring,
 } from "framer-motion";
-import { ArrowUpRight, Github, Globe, Package, Star } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Github, Globe, Package, Star } from "lucide-react";
 import type { Project, ProjectLink } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { TechBadge } from "@/components/ui/TechBadge";
@@ -138,7 +139,17 @@ export function ProjectCard({ project }: { project: Project }) {
               </li>
             ))}
           </ul>
-          <ProjectLinks links={project.links} />
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <ProjectLinks links={project.links} />
+            {/* Relative z-index keeps this link clickable above the spotlight overlay. */}
+            <Link
+              href={`/projects/${project.slug}`}
+              className="relative z-10 inline-flex items-center gap-1.5 text-xs font-medium text-accent transition-colors duration-200 hover:text-foreground"
+            >
+              Read case study
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </Link>
+          </div>
         </div>
       </div>
     </m.article>

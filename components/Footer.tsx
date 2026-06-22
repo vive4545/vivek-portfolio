@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowUp } from "lucide-react";
 import { navLinks, site, socials } from "@/data/site";
 
@@ -9,12 +10,12 @@ export function Footer() {
       <div className="shell py-12">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <a href="#top" className="flex items-center gap-2.5 text-sm font-semibold">
+            <Link href="/#top" className="flex items-center gap-2.5 text-sm font-semibold">
               <span className="grid h-9 w-9 place-items-center rounded-full bg-accent font-mono text-sm font-bold text-accent-foreground">
                 {site.shortName}
               </span>
               {site.name}
-            </a>
+            </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted">
               {site.role} based in {site.location}, building scalable web apps and
               data-intensive systems.
@@ -27,12 +28,12 @@ export function Footer() {
               <ul className="mt-4 flex flex-col gap-2.5">
                 {navLinks.map((link) => (
                   <li key={link.href}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-sm text-muted transition-colors hover:text-foreground"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -63,13 +64,13 @@ export function Footer() {
           <p className="text-xs text-muted">
             © {year} {site.name}. Built with Next.js, Tailwind &amp; Framer Motion.
           </p>
-          <a
-            href="#top"
+          <Link
+            href="/#top"
             className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-surface/50 px-3 py-1.5 text-xs text-muted transition-colors hover:border-accent/50 hover:text-foreground"
           >
             Back to top
             <ArrowUp className="h-3.5 w-3.5" />
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, m, useReducedMotion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { navLinks, site } from "@/data/site";
@@ -36,7 +37,7 @@ export function Navbar() {
   const reduced = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const active = useActiveSection(navLinks.map((l) => l.href.replace("#", "")));
+  const active = useActiveSection(navLinks.map((l) => l.href.split("#")[1] ?? ""));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -72,8 +73,8 @@ export function Navbar() {
             scrolled ? "glass shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)]" : "bg-transparent",
           )}
         >
-          <a
-            href="#top"
+          <Link
+            href="/#top"
             className="group flex items-center gap-2.5 rounded-full pl-1 pr-3 text-sm font-semibold tracking-tight"
             aria-label={`${site.name} — home`}
           >
@@ -81,7 +82,7 @@ export function Navbar() {
               {site.shortName}
             </span>
             <span className="hidden sm:inline">{site.name}</span>
-          </a>
+          </Link>
 
           {/* Desktop links */}
           <ul className="hidden items-center gap-1 md:flex">
@@ -90,7 +91,7 @@ export function Navbar() {
               const isActive = active === id;
               return (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     aria-current={isActive ? "true" : undefined}
                     className={cn(
@@ -101,7 +102,7 @@ export function Navbar() {
                     )}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
@@ -146,13 +147,13 @@ export function Navbar() {
             <ul className="glass flex flex-col gap-1 rounded-3xl p-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
                     className="block rounded-2xl px-4 py-3 text-base text-muted transition-colors hover:bg-surface-2 hover:text-foreground"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li>
