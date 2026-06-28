@@ -5,9 +5,9 @@ export const site: SiteConfig = {
   name: "Vivek Joshi",
   shortName: "VJ",
   role: "Full Stack Developer",
-  tagline: "Full Stack Developer building scalable web apps & data-intensive systems.",
+  tagline: "Full Stack Developer with 2+ years of experience building scalable web apps & data-intensive systems.",
   valueProp:
-    "I architect and ship scalable web apps, high-performance REST APIs, and data-intensive pipelines — bridging front-end and back-end with Node.js, React, Python, and Django.",
+    "With 2+ years of experience, I architect and ship scalable web apps, high-performance REST APIs, and data-intensive pipelines — bridging front-end and back-end with Node.js, React, Python, and Django.",
   location: "Ahmedabad, India",
   email: "vivekjoshiktm2000@gmail.com",
   phone: "+91 91493 57330",

@@ -23,7 +23,7 @@ export function About() {
           <Reveal className="space-y-5 text-pretty text-base leading-relaxed text-muted sm:text-lg">
             <p>
               I&apos;m a Full Stack Developer with{" "}
-              <span className="text-foreground">1.5+ years</span> of experience shipping scalable
+              <span className="text-foreground">2+ years</span> of experience shipping scalable
               web apps, high-performance REST APIs, and data-intensive pipelines. I&apos;m happiest
               bridging the front-end and back-end — turning ambiguous product goals into systems
               that stay fast as they grow.

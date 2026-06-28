@@ -39,7 +39,7 @@ export const education: EducationItem[] = [
 
 /** Headline stats shown in the About section. */
 export const stats = [
-  { value: "1.5+", label: "Years shipping production" },
+  { value: "2+", label: "Years shipping production" },
   { value: "5k", label: "API req/min handled" },
   { value: "82%", label: "Query time reduced" },
   { value: "1,800+", label: "Users served globally" },
