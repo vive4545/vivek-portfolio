@@ -24,7 +24,7 @@ const description = site.valueProp;
 
 // Location + core stack live in the title — this is what shows in Google and
 // what matches searches like "full stack developer ahmedabad".
-const homeTitle = `${site.name} — Full Stack Developer (MERN, Node.js, React) | Ahmedabad`;
+const homeTitle = `${site.name} — I build AI tools & automations that save businesses hours | RAG · LLM · AI Agents | Full Stack: React · Node.js · Python | Freelance · Remote`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -38,15 +38,17 @@ export const metadata: Metadata = {
   creator: site.name,
   keywords: [
     "Vivek Joshi",
+    "AI Tools Developer",
+    "AI Automation",
+    "RAG",
+    "LLM",
+    "AI Agents",
     "Full Stack Developer",
-    "Node.js",
     "React",
+    "Node.js",
     "Python",
-    "Django",
-    "TypeScript",
-    "REST API",
-    "Ahmedabad",
-    "Software Engineer",
+    "Freelance AI Developer",
+    "Remote Developer",
   ],
   alternates: {
     canonical: "/",

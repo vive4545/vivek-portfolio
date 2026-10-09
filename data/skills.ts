@@ -10,7 +10,7 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Frameworks & Libraries",
     icon: Layers,
-    skills: ["Node.js", "React.js", "Django", "Express.js", "Socket.io", "Vite", "Bootstrap"],
+    skills: ["Next.js", "Node.js", "React.js", "Express.js", "Django", "Socket.io", "Vite", "Tailwind CSS"],
   },
   {
     label: "Databases & Search",
@@ -20,7 +20,7 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Cloud & DevOps",
     icon: Cloud,
-    skills: ["GitHub Actions", "Nginx", "Linux", "Git", "Docker"],
+    skills: ["Cloudflare R2", "GitHub Actions", "Docker", "Nginx", "Linux", "Git"],
   },
 ];
 

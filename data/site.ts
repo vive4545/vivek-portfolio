@@ -4,11 +4,11 @@ import type { NavLink, SiteConfig, SocialLink } from "@/lib/types";
 export const site: SiteConfig = {
   name: "Vivek Joshi",
   shortName: "VJ",
-  role: "Full Stack Developer",
-  tagline: "Full Stack Developer with 2+ years of experience building scalable web apps & data-intensive systems.",
+  role: "AI Engineer & Full Stack Developer",
+  tagline: "I build AI tools & automations that save businesses hours | RAG · LLM · AI Agents | Full Stack: React · Node.js · Python | Freelance · Remote",
   valueProp:
-    "With 2+ years of experience, I architect and ship scalable web apps, high-performance REST APIs, and data-intensive pipelines — bridging front-end and back-end with Node.js, React, Python, and Django.",
-  location: "Ahmedabad, India",
+    "I build AI tools & automations that save businesses hours — specializing in RAG pipelines, LLM integrations, and autonomous AI agents, backed by production full-stack engineering across React, Node.js, and Python.",
+  location: "Remote · India",
   email: "vivekjoshiktm2000@gmail.com",
   phone: "+91 91493 57330",
   phoneHref: "+919149357330",

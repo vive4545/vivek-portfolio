@@ -68,7 +68,7 @@ export function Hero() {
               className="text-balance text-xl font-medium text-foreground/90 sm:text-2xl md:text-3xl"
             >
               {site.role}{" "}
-              <span className="text-muted">— scalable web apps &amp; data-intensive systems.</span>
+              <span className="text-muted">— RAG · LLM · AI Agents · Full Stack</span>
             </m.p>
           </div>
 

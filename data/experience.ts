@@ -10,12 +10,13 @@ export const experience: ExperienceItem[] = [
     summary:
       "Own end-to-end delivery of full-stack features across a microservice platform, with a focus on performance and reliability.",
     bullets: [
-      "Shipped full-stack features with Node.js and React, cutting page load from 3.2s to 1.1s (65%)",
-      "Optimized MongoDB / MySQL / Elasticsearch schemas, reducing query time from 450ms to 80ms (82%)",
+      "Architected & shipped full-stack features with Node.js, Next.js and React, cutting page load from 3.2s to 1.1s (65%)",
+      "Optimized MongoDB / MySQL / Elasticsearch schemas, reducing query time from 450ms to 80ms (82%) across 600+ catalog items",
+      "Engineered automated media pipelines on Cloudflare R2 handling 1,200+ high-res assets with zero rate-limit drops",
       "Built REST APIs handling 5,000 req/min at <100ms latency across microservices",
       "Drove CI/CD via GitHub Actions in Agile 2-week sprints",
     ],
-    stack: ["Node.js", "React", "MongoDB", "MySQL", "Elasticsearch", "GitHub Actions"],
+    stack: ["Node.js", "Next.js", "React", "MySQL", "MongoDB", "Cloudflare R2", "Elasticsearch", "GitHub Actions"],
   },
   {
     role: "Python Developer",

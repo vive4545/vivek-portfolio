@@ -22,19 +22,12 @@ export function About() {
         <div className="flex flex-col gap-8">
           <Reveal className="space-y-5 text-pretty text-base leading-relaxed text-muted sm:text-lg">
             <p>
-              I&apos;m a Full Stack Developer with{" "}
-              <span className="text-foreground">2+ years</span> of experience shipping scalable
-              web apps, high-performance REST APIs, and data-intensive pipelines. I&apos;m happiest
-              bridging the front-end and back-end — turning ambiguous product goals into systems
-              that stay fast as they grow.
+              I build <span className="text-foreground">AI tools, autonomous agents, and intelligent workflows</span> that save businesses hours of manual effort. Backed by <span className="text-foreground">2+ years</span> of production full-stack engineering, I bridge cutting-edge LLMs and RAG pipelines with resilient web applications.
             </p>
             <p>
-              My day-to-day spans <span className="text-foreground">Node.js</span> and{" "}
-              <span className="text-foreground">React</span> on the product side, and{" "}
-              <span className="text-foreground">Python</span> and{" "}
-              <span className="text-foreground">Django</span> for data and automation. I care about
-              query latency, clean CI/CD, and the small interaction details that make software feel
-              considered.
+              My core stack spans <span className="text-foreground">React / Next.js</span> and{" "}
+              <span className="text-foreground">Node.js</span> for high-performance applications, and{" "}
+              <span className="text-foreground">Python</span> for AI pipelines, LLM orchestration, and data automation. I care deeply about prompt engineering, vector search latency, and building software that delivers measurable business ROI.
             </p>
           </Reveal>
 

@@ -11,6 +11,41 @@ import type { Project } from "@/lib/types";
  */
 export const projects: Project[] = [
   {
+    slug: "postmaze",
+    title: "PostMaze — Global B2B Sourcing & Trade Platform",
+    blurb: "Enterprise B2B trade engine · 600+ products · automated CDN media pipeline",
+    description:
+      "A full-scale B2B cross-border trade marketplace connecting global buyers and verified suppliers with RFQ matching, tiered wholesale pricing, and an automated Cloudflare R2 media pipeline.",
+    metaDescription:
+      "PostMaze is an enterprise B2B cross-border trade marketplace connecting global buyers and suppliers with automated RFQ workflows, tiered volume pricing, and high-performance CDN asset delivery on Cloudflare R2. Engineered with Next.js, Node.js and MySQL by Vivek Joshi.",
+    context: "Cross-border B2B trade platform · Next.js & Node.js",
+    highlights: [
+      "Automated stock-media ingestion pipeline via Pexels API & Cloudflare R2, populating 1,200+ product assets",
+      "End-to-end RFQ matching system with tiered wholesale pricing (fixed, range, volume) across 20+ trade categories",
+      "RESTful API architecture handling high-concurrency catalog queries on MySQL with optimized indexing",
+      "AI-driven content & intelligence pipeline powered by Google Gemini for automated trade market reports",
+    ],
+    tech: ["Next.js", "Node.js (Express)", "MySQL", "Cloudflare R2", "Pexels API", "Tailwind CSS", "Docker"],
+    links: [
+      { label: "Live UAT", href: "https://uat.postmaze.com", type: "live" },
+    ],
+    featured: true,
+    caseStudy: [
+      {
+        heading: "The Challenge & Architecture",
+        body: "International B2B sourcing requires managing complex multi-variant catalogs, verified supplier trust chains, and real-time RFQ negotiation across global markets. PostMaze was architected as a high-performance cross-border trade platform with a Next.js App Router frontend and an Express microservices backend backed by MySQL.",
+      },
+      {
+        heading: "Automated Media Pipeline on Cloudflare R2",
+        body: "To scale catalog onboarding across 600+ multi-category trade products, I engineered an automated stock-media ingestion pipeline integrating the Pexels REST API with Cloudflare R2 object storage. The pipeline handles rate-limit backoff, image downloading, UUID-based deduplication, and direct public CDN delivery for over 1,200 cover and gallery assets.",
+      },
+      {
+        heading: "RFQ Matching & Tiered Trade Pricing",
+        body: "Built a flexible wholesale pricing engine supporting fixed, range, and tiered volume-based pricing models alongside a structured RFQ lifecycle (draft, published, matched, quoted). Optimized database indexes and query paths to deliver sub-100ms catalog discovery across hundreds of international commodities.",
+      },
+    ],
+  },
+  {
     slug: "code-review-genius",
     title: "Code Review Genius",
     blurb: "Published NPM package · privacy-first CLI dev assistant",
