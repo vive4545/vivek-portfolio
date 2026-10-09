@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { GraduationCap, MapPin } from "lucide-react";
 import { site } from "@/data/site";
 import { education, skillGroups, stats } from "@/data/skills";
@@ -53,23 +54,34 @@ export function About() {
           </Reveal>
         </div>
 
-        {/* Monogram card + stats */}
+        {/* Profile photo card + stats */}
         <Reveal delay={0.1} className="flex flex-col gap-5">
-          <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-surface to-surface-2 p-8">
-            <div aria-hidden className="absolute inset-0 bg-grid opacity-40" />
+          <div className="group relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-surface to-surface-2 p-6 transition-all duration-300 hover:border-accent/40">
+            <div aria-hidden className="absolute inset-0 bg-grid opacity-30" />
             <div aria-hidden className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/20 blur-3xl" />
-            <div className="relative flex flex-col items-start gap-5">
-              <span className="grid h-20 w-20 place-items-center rounded-2xl bg-accent font-mono text-2xl font-bold text-accent-foreground">
-                {site.shortName}
-              </span>
-              <div>
-                <p className="text-lg font-semibold text-foreground">{site.name}</p>
-                <p className="text-sm text-muted">{site.role}</p>
+            <div className="relative flex flex-col sm:flex-row items-start sm:items-center gap-5">
+              <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl border-2 border-accent/30 shadow-lg shadow-accent/10 transition-transform duration-300 group-hover:scale-[1.03]">
+                <Image
+                  src="/avatar.png"
+                  alt={site.name}
+                  fill
+                  sizes="96px"
+                  priority
+                  className="object-cover object-top"
+                />
               </div>
-              <p className="flex items-center gap-2 text-sm text-muted">
-                <MapPin className="h-4 w-4 text-accent" />
-                {site.location}
-              </p>
+              <div className="flex flex-col gap-1.5">
+                <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 font-mono text-[0.7rem] font-medium text-accent">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+                  Available for Projects
+                </span>
+                <p className="text-xl font-bold tracking-tight text-foreground">{site.name}</p>
+                <p className="text-xs font-medium text-muted">{site.role}</p>
+                <p className="flex items-center gap-1.5 text-xs text-muted">
+                  <MapPin className="h-3.5 w-3.5 text-accent" />
+                  {site.location}
+                </p>
+              </div>
             </div>
           </div>
 

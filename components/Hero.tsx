@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { m, useReducedMotion, type Variants } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Download, Mail } from "lucide-react";
 import { site, socials } from "@/data/site";
@@ -38,9 +39,18 @@ export function Hero() {
           animate="show"
           className="flex max-w-4xl flex-col items-start gap-7"
         >
-          {/* Availability pill */}
+          {/* Availability pill with avatar */}
           <m.div variants={item}>
-            <span className="inline-flex items-center gap-2.5 rounded-full border border-border/80 bg-surface/50 px-4 py-1.5 text-sm text-muted backdrop-blur">
+            <span className="inline-flex items-center gap-2.5 rounded-full border border-border/80 bg-surface/50 p-1 pr-4 text-sm text-muted backdrop-blur">
+              <span className="relative h-6 w-6 shrink-0 overflow-hidden rounded-full border border-accent/40">
+                <Image
+                  src="/avatar.png"
+                  alt={site.name}
+                  fill
+                  sizes="24px"
+                  className="object-cover object-top"
+                />
+              </span>
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75 motion-reduce:hidden" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
